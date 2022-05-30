@@ -5,7 +5,7 @@
 
 
 def connect_to_blockchain():
-    # Should connect to the Blockchain.
+    # Should connect to the Blockchain. We will use EOS
     print('Connection To be Implemented')
 
 
