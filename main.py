@@ -2,11 +2,19 @@
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import solana
+from solana.rpc.api import Client
+http_client = Client("https://api.devnet.solana.com")
 
 
 def connect_to_blockchain():
-    # Should connect to the Blockchain. We will use EOS
-    print('Connection To be Implemented')
+    # Should connect to the Blockchain. We will use Solana
+    if http_client.is_connected():
+        print("Connected to Solana Blockchain")
+    else:
+        print("Not Connected to Solana Blockchain")
+    print(http_client.get_cluster_nodes())
+    print(http_client.get_block_height())
 
 
 def search_non_fungible_tokens_to_mint():
@@ -33,6 +41,10 @@ def connect_to_secondary_market():
 def put_non_fungible_token_on_sale():
     # It will have to find the floor price
     print('Putting up for Sale to be implemented')
+    print(http_client.get_balance('mvines9iiHiQTysrwkJjGf2gb9Ex9jXJX8ns3qwf2kN'))
+    # print(http_client.get_block_time('135688547'))
+    print(http_client.get_confirmed_transaction('4xkT2q8j6ac5dSprFbJtjEkcdAap2YwffVJVwdDfjvpjxfkstwNezD7mbPQN91355QfDpU6jXx58ApPizYzsinBD'))
+    print("Client is :", http_client.is_connected())
 
 
 # Press the green button in the gutter to run the script.
