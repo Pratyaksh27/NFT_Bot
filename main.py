@@ -4,7 +4,8 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import solana
 from solana.rpc.api import Client
-http_client = Client("https://api.devnet.solana.com")
+# http_client = Client("https://api.devnet.solana.com"). Devnet
+http_client = Client("https://api.mainnet-beta.solana.com")
 
 
 def connect_to_blockchain():
@@ -13,8 +14,8 @@ def connect_to_blockchain():
         print("Connected to Solana Blockchain")
     else:
         print("Not Connected to Solana Blockchain")
-    print(http_client.get_cluster_nodes())
-    print(http_client.get_block_height())
+    # print(http_client.get_cluster_nodes())
+    print("Block Height is ", http_client.get_block_height())
 
 
 def search_non_fungible_tokens_to_mint():
